@@ -9,8 +9,8 @@ let idx = 0
 
 let photos = []
 
-for (let i = 1;i <=22; i++){
-    photos.push("photos/image (" + i + ").jpg")
+for (let i = 1;i <=1; i++){
+    photos.push("photos/image" + i + ".jpg")
 }
 
 
@@ -28,10 +28,8 @@ function getBackgroundImage(){
         return response.json();
     })
     .then(data => {
-        results = data
-        result = results[Math.floor(Math.random() * Object.keys(results).length)]
-        console.log(result.urls.regular)
-        document.body.background = result.urls.regular;
+        console.log(data)
+        document.body.background = data.urls.regular;
     })
 }
 

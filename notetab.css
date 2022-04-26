@@ -137,6 +137,7 @@ img {
   transition: all .3s ease-in-out;
   background-color: transparent;
   padding: 10px;
+  text-align: center;
 }
 
 
@@ -151,6 +152,7 @@ img {
   background-color: transparent;
   border-bottom:3px solid rgba(255,255,255,.5);
   transition: all 200ms ease-in-out;
+
 }
 
 .input-search::placeholder{
