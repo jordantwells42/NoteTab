@@ -1,0 +1,31 @@
+{   
+    "name": "NoteTab",
+    "manifest_version": 3,  
+    "version": "1.0",
+    "background": {
+      "service_worker": "background.js"
+    },
+
+
+  "chrome_url_overrides":{
+    "newtab":"notetab.html"
+  },
+
+  "permissions": ["tabs", "activeTab", "scripting", "tabGroups", "storage"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+
+ "content_scripts": [
+   {
+     "matches": ["<all_urls>"],
+     "js": ["content.js", "popup.js", "notetab.js"],
+     "run_at": "document_start"
+   }
+  ],
+
+
+  "host_permissions": [
+      "<all_urls>"
+  ]
+}

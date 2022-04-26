@@ -1,0 +1,177 @@
+body {
+  background-repeat: no-repeat;
+  background-origin: center;
+  background-position: center;
+  background-attachment: fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.board {
+  --d: 16em; /* image size */
+  --rel: 1; /* how much extra space we want between images, 1 = one image size */
+  --r: calc(1.25*var(--d)); /* circle radius */
+  --s: calc(2*var(--r) + var(--d)); /* container size */
+  position: absolute;
+  top: 35%;
+  right:  20%;
+  bottom:  20%;
+  left:  20%;
+  z-index:  100000000000000;
+
+}
+
+.delete {
+  font-size: 14px;
+  color:  white;
+  font-weight: bold;
+}
+
+.center {
+  padding-top: 10px;
+	display: flex;
+	justify-content: center;
+
+}
+
+.board .noteContainer {
+  position: absolute;
+  top: 50%; left: 50%; right:  50%;
+  margin: calc(-.65*var(--d));
+  width: var(--d); height: var(--d);
+  --az: calc(var(--i)*1turn/var(--m));
+  transform: 
+    rotate(var(--az)) 
+    translate(var(--r))
+    rotate(calc(-1*var(--az)));
+
+  opacity: 0.45;
+  transition: opacity 0.2s;
+
+
+}
+
+.board .noteContainer:hover {
+
+  opacity: 1;
+
+}
+
+.note {
+	position: relative;
+	  padding: 12px 12px;
+	  font-size:  15px;
+	  height:  220px;
+	  width:  220px;
+	  border-radius:  20px;
+    border-color:  white;
+    border-width:  3px;
+    font-size:  18px;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px lightslategray;
+  color: white;
+
+}
+
+img {
+	width: 50px;
+	height: 50px;
+}
+
+
+/* CSS */
+.addNote-btn {
+  font-size:  18px;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px lightslategray;
+  color:  white;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 2px solid white;
+  border-radius:  20px;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.addNote-btn:after {
+  content: "";
+  background-color: transparent;
+  border-radius:  20px;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.addNote-btn:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .addNote-btn {
+    padding: 13px 50px 13px;
+  }
+}
+
+.input-search{
+  height: 50px;
+  width: 100px;
+  border-width: 3px;
+  border-radius: 25 px;
+  border-color: white;
+  font-size: 0px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all .3s ease-in-out;
+  background-color: transparent;
+  padding: 10px;
+}
+
+
+.input-search:hover{
+  width: 300px;
+  border-radius: 25px;
+  border-width: 0px;
+  font-size:  18px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 2px lightslategray;
+  background-color: transparent;
+  border-bottom:3px solid rgba(255,255,255,.5);
+  transition: all 200ms ease-in-out;
+}
+
+.input-search::placeholder{
+  width: 300px;
+  border-radius: 3px white;
+  font-size:  0px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 2px lightslategray;
+  background-color: transparent;
+  transition: all 200ms ease-in-out;
+}
+
+.input-search:hover::placeholder{
+  width: 300px;
+  border-radius: 0px;
+  font-size:  18px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 2px lightslategray;
+  background-color: transparent;
+
+  transition: all 200ms ease-in-out;
+}
