@@ -8,7 +8,7 @@ chrome.runtime.onMessage.addListener(
 
       google_search = "https://www.google.com/search?q="
       search_url = google_search + request.search_query
-      tab = chrome.tabs.create({url:search_url});
+      tab = chrome.tabs.update({url:search_url});
    
 
       sendResponse({farewell: request.search_query});

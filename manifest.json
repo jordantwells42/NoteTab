@@ -1,31 +1,24 @@
 {   
     "name": "NoteTab",
     "manifest_version": 3,  
-    "version": "1.0",
+    "version": "0.0.0.1",
     "background": {
       "service_worker": "background.js"
     },
 
-
+    "icons": {
+    "128": "icon.png",
+    "64": "icon.png",
+    "48": "icon.png",
+    "32": "icon.png",
+    "16": "icon.png"
+  },
   "chrome_url_overrides":{
     "newtab":"notetab.html"
   },
 
-  "permissions": ["tabs", "activeTab", "scripting", "tabGroups", "storage"],
+  "permissions": ["tabs"],
     "action": {
       "default_popup": "popup.html"
-    },
-
- "content_scripts": [
-   {
-     "matches": ["<all_urls>"],
-     "js": ["content.js", "popup.js", "notetab.js"],
-     "run_at": "document_start"
-   }
-  ],
-
-
-  "host_permissions": [
-      "<all_urls>"
-  ]
+    }
 }

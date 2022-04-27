@@ -1,0 +1,64 @@
+body {
+	background-color: azure;
+}
+
+.container {
+	padding-top: 40px
+	display: inline-block;
+	width: 100%
+
+}
+p {
+	display: inline-block;
+}
+
+img {
+	height: 60px;
+	width: 90px;
+}
+
+label{
+	color:  lightslategray;
+	font-size: 10;
+	justify-content: center;
+	text-align: center;
+	font-weight: bold;
+}
+
+.addBtn{
+	text-align: center;
+	justify-content: center;
+	position: relative;
+}
+
+.submitImage{
+	padding-top: 10px;
+	position: relative;
+}
+
+.addImage-btn{
+	padding-top: 10px;
+	position: relative;
+	height: 20px;
+	width: 100px;
+	border-width: 3px;
+	border-radius: 10px;
+	overflow: hidden;
+	border-color: bisque;
+	font-size:  10px;
+	color: black;
+	background-color: white;
+
+}
+
+
+
+.imageurl {
+	overflow-wrap: break-word;
+	width: 80%;
+	font-size: 14px;
+	float:  left;
+}
+.delete{
+	float: right;
+}
